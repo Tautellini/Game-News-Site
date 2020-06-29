@@ -1,0 +1,63 @@
+.nav__item {
+	text-align: center;
+	text-decoration: none;
+// workaround to center nav text vertically
+	line-height: 70px;
+}
+
+.nav__item.active {
+	color: $main;
+}
+
+.mySlides {
+	div {
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+    text-shadow: 2px 2px 2px $main;
+	}
+}
+
+.footer__widgets {
+	div {
+		text-align: center;
+		color: #fff;
+		h3 {
+			text-transform: uppercase;
+			font-size: 80%;
+		}
+	}
+}
+
+.footer__widgets__nav {
+	.footer__widgets__nav__links {
+		h3 {
+			color: $secondary;
+		}
+		a {
+			color: lighten($secondary, 25);
+		}
+	}
+}
+
+.footer__information {
+	color: #fff;
+	p {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 60%;
+	}
+}
+
+form > fieldset {
+	font-size: 150%;
+}
+
+form > fieldset > input ,
+form > fieldset > textarea {
+	font-size: 150%;
+}
+
+.success {
+	text-align: center;
+}

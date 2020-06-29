@@ -1,0 +1,14 @@
+.news-wrapper, .games-wrapper, .stuff-wrapper {
+	@include sm {
+		padding: 0;
+	}
+	@include md {
+		padding: 0 5% 0 5%;
+	}
+	@include lg {
+		padding: 0 10% 0 10%;
+	}
+	@include xl {
+		padding: 0 20% 0 20%;
+	}
+}

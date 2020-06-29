@@ -1,0 +1,175 @@
+body {
+	background-color: lighten($main, 80);
+}
+
+.news-wrapper, .games-wrapper, .stuff-wrapper {
+	background-image: url("pics/parallax.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav {
+	@include flexbox(row);
+	height: 100px;
+	.nav__logo {
+		max-width: 100px;
+		background-color: scale-color($main, $lightness: -50, $saturation: -50);
+		.nav__logo__img {
+			height: 100%;
+		}
+	}
+	.nav__item {
+		@include layout(10px, $main, lighten($main, 75%));
+		outline:0;
+		flex: 1;
+		margin-left: 1px;
+		border: 0;
+	}
+	.nav__item.active {
+		background-color: $secondary;
+	}
+	.mySlides {
+		div {
+			background-color:rgba($secondary, .8);
+		}
+	}
+}
+
+.games {
+	@include flexbox(column);
+	overflow-x: hidden;
+	padding: 20px 0 20px 0;
+	.games__filter {
+		flex: 1 1 30%;
+		.games__filter__category {
+			@include flexbox(row);
+			.games__filter__category__button {
+				flex: 1;
+				padding: 10px;
+			}
+		}
+	}
+	.games__container {
+		flex: 1 1 70%;
+		position: relative;
+		.games__container__button--display-left {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index:10;
+		}
+		.games__container__button--display-right {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			z-index:10;
+		}
+		.mySlides {
+			position:relative;
+			div {
+				position: absolute;
+				width: 100%;
+				padding: 10px;
+				top: 20%;
+				background-color: #121212;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.news {
+	@include flexbox(column);
+	padding: 20px 0 20px 0;
+	.news__entry {
+		@include flexbox(row);
+		flex: 1;
+		padding-bottom: 10px;
+		.news__entry__image {
+			flex: 1 1 50%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.news__entry__content {
+			@include flexbox(column);
+			flex: 1 1 50%;
+			background-color: $secondary;
+		}
+		.news__entry__content__title, .news__entry__content__author, .news__entry__content__date, .news__entry__content__summary, .news__entry__content__source {
+			@include flexbox(row);
+			padding: 10px;
+			border-bottom: 1px solid #fff;
+		}
+		.news__entry__content__title {background-color: scale-color($secondary, $lightness: -30%, $saturation: 80)}
+		.news__entry__content__author {background-color: scale-color($secondary, $lightness: -20%, $saturation: 80)}
+		.news__entry__content__date {background-color: scale-color($secondary, $lightness: -10%, $saturation: 80)}
+		.news__entry__content__source {background-color: scale-color($secondary, $lightness: 0, $saturation: 80)}
+		.news__entry__content__summary {
+			border: 0;
+			background-color: lighten($main, 50%);
+			flex: 1;
+		}
+	}
+}
+
+.footer {
+	@include flexbox(column);
+	.footer__widgets {
+		@include flexbox(row);
+		div {
+			flex: 1 1 (100%/3);
+			display: flex;
+			h3 {
+				margin: auto;
+			}
+		}
+		.footer__widgets__frontend, .footer__widgets__igdb, .footer__widgets__nav {
+			background: linear-gradient(0deg, scale-color($main, $lightness: -80), scale-color($main, $lightness: -50));
+			border-bottom: 1px solid #fff;
+		}
+		.footer__widgets__igdb {
+			border-right: 1px solid #fff;
+		}
+		.footer__widgets__nav {
+			border-left: 1px solid #fff;
+			.footer__widgets__nav__links {
+				@include flexbox(column);
+				padding: 10px;
+				h3 {
+					padding: 10px;
+				}
+			}
+		}
+	}
+	.footer__information {
+		background-color: $main;
+		p {
+			padding: 10px;
+			margin: 0;
+		}
+	}
+}
+
+#kontakt-form {
+	padding: 20px 0 20px 0;
+}
+
+form > fieldset , form > fieldset > input ,
+form > fieldset > textarea {
+	width: 100%;
+}
+
+form > fieldset > textarea {
+	margin-bottom: 1em;
+}
+
+.success {
+	padding: 10px;
+}

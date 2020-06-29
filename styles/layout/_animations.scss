@@ -1,0 +1,30 @@
+.nav__logo__img {
+	animation: rotation 20s infinite linear;
+	filter: invert(100%);
+	@keyframes rotation {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(359deg);
+		}
+	}
+}
+
+.nav__item {
+	transition: background-color 0.5s ease-out;
+}
+
+.nav__item:hover {
+	animation: 1s ease forwards navhover;
+}
+@keyframes navhover {
+	0% {
+		background: $main;
+		color: lighten($main, 75%);
+	}
+	100% {
+		background: $secondary;
+		color: $main;
+	}
+}
